@@ -1,37 +1,32 @@
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Navegación simple a ancho completo
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container">
-        <Link className="navbar-brand" to="/">Three.js Personajes</Link>
-        <button 
-          className="navbar-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Inicio</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/personaje1">Personaje 1</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/personaje2">Personaje 2</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/personaje3">Personaje 3</Link>
-            </li>
-          </ul>
-        </div>
+    <header style={{ 
+      backgroundColor: '#333', 
+      padding: '1rem',
+      color: 'white',
+      width: '100%'
+    }}>
+      <div style={{ 
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '0 2rem'
+      }}>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
+          Three.js Personajes
+        </Link>
+        <nav>
+          <Link to="/" style={{ color: 'white', marginRight: '1rem', textDecoration: 'none' }}>Inicio</Link>
+          <Link to="/personaje1" style={{ color: 'white', marginRight: '1rem', textDecoration: 'none' }}>Personaje 1</Link>
+          <Link to="/personaje2" style={{ color: 'white', marginRight: '1rem', textDecoration: 'none' }}>Personaje 2</Link>
+          <Link to="/personaje3" style={{ color: 'white', textDecoration: 'none' }}>Personaje 3</Link>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 };
 
